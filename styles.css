@@ -191,7 +191,7 @@ button {
 .workspace {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(240px, 300px) minmax(520px, 1fr) minmax(240px, 300px);
+  grid-template-columns: minmax(240px, 300px) minmax(430px, 760px) minmax(240px, 300px);
   gap: 18px;
   align-items: start;
   padding: 18px clamp(16px, 2.5vw, 32px) 28px;
@@ -495,8 +495,8 @@ button {
 
 .insight-card {
   position: relative;
-  min-height: min(680px, calc(100vh - 190px));
-  overflow: hidden;
+  min-height: min(620px, calc(100vh - 190px));
+  overflow: visible;
   padding: clamp(20px, 4vw, 44px);
   background:
     linear-gradient(135deg, rgba(36, 117, 107, 0.08), transparent 28%),
@@ -521,8 +521,8 @@ button {
 .card-shell {
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: clamp(18px, 3vw, 34px);
+  grid-template-rows: auto auto auto;
+  gap: clamp(16px, 3vw, 28px);
 }
 
 .card-topline {
@@ -560,157 +560,82 @@ button {
 
 .card-body h2 {
   max-width: 900px;
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   font-size: calc(34px * var(--reader-scale));
   line-height: 1.05;
   letter-spacing: 0;
 }
 
-.summary-lead {
-  max-width: 850px;
-  margin: 0 0 26px;
-  color: #343631;
-  font-size: calc(19px * var(--reader-scale));
-  line-height: 1.65;
-}
-
-.deep-section {
+.focus-stack {
   display: grid;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
 }
 
-.deep-section:first-child {
-  margin-top: 0;
+.focus-block {
+  display: grid;
+  gap: 6px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
 }
 
-.section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 14px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--line);
+.focus-block:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
-.section-title span {
+.focus-block span,
+.action-card span,
+.note-card span {
   color: var(--teal);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 850;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
-.section-title h3 {
+.focus-block p {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.2;
+  color: #30332f;
+  font-size: calc(16px * var(--reader-scale));
+  line-height: 1.58;
 }
 
-.two-column,
-.implication-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+.focus-block-main p {
+  color: var(--ink);
+  font-size: calc(19px * var(--reader-scale));
+  line-height: 1.5;
+  font-weight: 720;
 }
 
-.implication-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.detail-block,
-.data-point,
-.passage-block,
-.implication-grid article {
-  min-width: 0;
+.focus-block-action {
   padding: 16px;
-  background: rgba(246, 244, 238, 0.78);
+  background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: 8px;
 }
 
-.detail-block h4,
-.passage-block h4,
-.implication-grid h4,
-.data-point span {
-  margin: 0 0 10px;
+.action-card,
+.note-card {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.action-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: calc(24px * var(--reader-scale));
+  line-height: 1.18;
+}
+
+.action-card p {
+  margin: 0;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0;
-}
-
-.detail-block p,
-.data-point p,
-.passage-block p,
-.implication-grid p,
-.action-list li {
-  margin: 0;
-  color: #30332f;
-  font-size: calc(15px * var(--reader-scale));
-  line-height: 1.62;
-}
-
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.data-point {
-  padding: 14px;
-}
-
-.data-point span {
-  display: block;
-}
-
-.data-point strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.25;
-}
-
-.passage-block ol {
-  display: grid;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.passage-block li {
-  display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 12px;
-}
-
-.passage-block a {
-  color: var(--teal);
-  font-size: 13px;
-  font-weight: 850;
-  text-decoration: none;
-}
-
-.passage-block strong {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--ink);
-  font-size: calc(15px * var(--reader-scale));
-  line-height: 1.45;
-}
-
-.action-list {
-  display: grid;
-  gap: 10px;
-  padding-left: 20px;
-  margin: 0;
-}
-
-.note-panel {
-  min-height: 210px;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .note-textarea {
@@ -728,18 +653,11 @@ button {
 .card-footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 12px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
-}
-
-.quote {
-  max-width: 620px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
 }
 
 .timestamp-button {
@@ -749,16 +667,17 @@ button {
   gap: 8px;
   padding: 0 14px;
   color: var(--ink);
-  background: var(--surface-2);
-  border: 1px solid var(--line);
+  background: var(--ink);
+  border: 1px solid var(--ink);
   border-radius: 8px;
+  color: #fffefa;
   font-weight: 800;
   text-decoration: none;
 }
 
 .timestamp-button:hover {
-  background: var(--teal-2);
-  border-color: rgba(36, 117, 107, 0.28);
+  background: var(--teal);
+  border-color: var(--teal);
 }
 
 .card-controls {
@@ -967,12 +886,6 @@ button {
 
   .insight-card {
     min-height: 620px;
-  }
-
-  .two-column,
-  .data-grid,
-  .implication-grid {
-    grid-template-columns: 1fr;
   }
 
   .card-body h2 {

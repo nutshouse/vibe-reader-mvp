@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Instagram Reel cover">
+  <rect width="1200" height="675" fill="#1d201f"/>
+  <rect x="90" y="72" width="1020" height="531" rx="28" fill="#fffefa"/>
+  <rect x="148" y="132" width="290" height="54" rx="8" fill="#24756b"/>
+  <text x="174" y="169" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fffefa">Vibe Reader</text>
+  <text x="148" y="270" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#1d201f">Podcast / 教學影片</text>
+  <text x="148" y="345" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#1d201f">變成洞察卡</text>
+  <rect x="148" y="420" width="255" height="60" rx="8" fill="#d4684a"/>
+  <text x="184" y="460" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#fffefa">Ask AI</text>
+  <rect x="430" y="420" width="300" height="60" rx="8" fill="#d9a034"/>
+  <text x="466" y="460" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#1d201f">網頁閱讀模式</text>
+  <circle cx="960" cy="220" r="78" fill="#dceee9"/>
+  <path d="M936 176l92 48-92 48v-96Z" fill="#24756b"/>
+</svg>

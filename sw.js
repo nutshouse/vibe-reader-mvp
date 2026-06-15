@@ -1,4 +1,4 @@
-const CACHE_NAME = "vibe-reader-mvp-v5";
+const CACHE_NAME = "vibe-reader-mvp-v6";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const ASSETS = [
   "./manifest.webmanifest",
   "./assets/icon.svg",
   "./assets/article-cover.svg",
+  "./assets/reel-cover.svg",
   "./assets/video-thumb.jpg",
 ];
 
