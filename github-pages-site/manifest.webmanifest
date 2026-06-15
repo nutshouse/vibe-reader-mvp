@@ -1,0 +1,19 @@
+{
+  "name": "Vibe Reader MVP",
+  "short_name": "Vibe MVP",
+  "description": "Turn long videos and articles into structured insight cards.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ee",
+  "theme_color": "#f6f4ee",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Vibe Reader MVP">
+  <rect width="512" height="512" rx="96" fill="#1d201f"/>
+  <path d="M116 126h280c23 0 42 19 42 42v176c0 23-19 42-42 42H116c-23 0-42-19-42-42V168c0-23 19-42 42-42Z" fill="#fffefa"/>
+  <path d="M132 190h134v28H132v-28Zm0 58h248v24H132v-24Zm0 54h188v24H132v-24Z" fill="#24756b"/>
+  <path d="M326 174l64 34-64 34v-68Z" fill="#d4684a"/>
+  <path d="M92 394h328v28H92v-28Z" fill="#d9a034"/>
+</svg>

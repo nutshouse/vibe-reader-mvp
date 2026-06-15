@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f4ee" />
+    <meta
+      name="description"
+      content="Vibe Reader style MVP for turning long YouTube videos and articles into structured insight cards."
+    />
+    <title>Vibe Reader MVP</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/icon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block" aria-label="Vibe Reader MVP">
+          <div class="brand-mark">VR</div>
+          <div>
+            <div class="brand-name">Vibe Reader MVP</div>
+            <div class="brand-subtitle">Insight cards for long videos and articles</div>
+          </div>
+        </div>
+
+        <form class="url-form" id="sourceForm">
+          <label class="sr-only" for="sourceUrl">YouTube 或文章連結</label>
+          <input
+            id="sourceUrl"
+            name="sourceUrl"
+            type="url"
+            value="https://www.youtube.com/watch?v=6EmxbBXnHvo"
+            autocomplete="off"
+            spellcheck="false"
+            required
+          />
+          <button class="primary-action" type="submit">
+            <span aria-hidden="true">+</span>
+            <span>生成</span>
+          </button>
+        </form>
+      </header>
+
+      <main class="workspace" aria-live="polite">
+        <aside class="source-pane" aria-label="內容來源">
+          <section class="source-visual">
+            <img id="sourceImage" src="./assets/video-thumb.jpg" alt="影片縮圖" />
+            <button class="play-chip" id="openSource" type="button">
+              <span aria-hidden="true">▶</span>
+              <span>原片</span>
+            </button>
+          </section>
+
+          <section class="source-meta">
+            <div class="meta-kicker" id="sourceKind">YouTube video</div>
+            <h1 id="sourceTitle">心流學習，10倍你的吸收力｜終極學習秘籍</h1>
+            <p id="sourceAuthor">Bad Bad Channel</p>
+          </section>
+
+          <section class="processing-panel" id="processingPanel">
+            <div class="processing-header">
+              <span>處理隊列</span>
+              <strong id="processingPercent">0%</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill" id="processingFill"></div>
+            </div>
+            <ol class="pipeline" id="pipelineSteps">
+              <li data-step="0">讀取連結</li>
+              <li data-step="1">抽取字幕/正文</li>
+              <li data-step="2">切分章節</li>
+              <li data-step="3">生成洞察卡</li>
+            </ol>
+          </section>
+
+          <section class="stats-grid" aria-label="閱讀統計">
+            <div>
+              <span id="cardCount">10</span>
+              <small>洞察卡</small>
+            </div>
+            <div>
+              <span id="readTime">7m</span>
+              <small>閱讀</small>
+            </div>
+            <div>
+              <span id="savedCount">0</span>
+              <small>收藏</small>
+            </div>
+          </section>
+
+          <nav class="chapter-list" id="chapterList" aria-label="洞察目錄"></nav>
+        </aside>
+
+        <section class="reader-pane" aria-label="卡片閱讀器">
+          <div class="reader-toolbar">
+            <div class="segmented" role="tablist" aria-label="閱讀模式">
+              <button class="segment active" type="button" data-view="insight">洞察</button>
+              <button class="segment" type="button" data-view="actions">行動</button>
+              <button class="segment" type="button" data-view="notes">筆記</button>
+            </div>
+            <div class="reader-actions">
+              <button class="icon-button" id="decreaseText" type="button" aria-label="縮小字體" title="縮小字體">A-</button>
+              <button class="icon-button" id="increaseText" type="button" aria-label="放大字體" title="放大字體">A+</button>
+              <button class="icon-button" id="saveCard" type="button" aria-label="收藏卡片" title="收藏卡片">☆</button>
+            </div>
+          </div>
+
+          <article class="insight-card" id="insightCard" tabindex="0"></article>
+
+          <div class="card-controls">
+            <button class="nav-button" id="prevCard" type="button" aria-label="上一張">‹</button>
+            <div class="card-progress">
+              <div class="card-progress-bar" id="cardProgressBar"></div>
+            </div>
+            <button class="nav-button" id="nextCard" type="button" aria-label="下一張">›</button>
+          </div>
+        </section>
+
+        <aside class="ask-pane" aria-label="Ask AI">
+          <section class="ask-card">
+            <div class="ask-header">
+              <div>
+                <span class="meta-kicker">Ask AI</span>
+                <h2>追問目前卡片</h2>
+              </div>
+              <button class="ghost-button" id="clearChat" type="button">清空</button>
+            </div>
+            <div class="suggestions" id="suggestions"></div>
+            <div class="chat-log" id="chatLog"></div>
+            <form class="ask-form" id="askForm">
+              <label class="sr-only" for="askInput">輸入問題</label>
+              <textarea id="askInput" rows="3" placeholder="例如：給我一個今天能做的練習"></textarea>
+              <button class="primary-action" type="submit">
+                <span aria-hidden="true">↵</span>
+                <span>送出</span>
+              </button>
+            </form>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
